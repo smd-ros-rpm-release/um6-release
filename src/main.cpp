@@ -209,9 +209,9 @@ void publishMsgs(um6::Registers& r, ros::NodeHandle* n, const std_msgs::Header& 
   if (rpy_pub.getNumSubscribers() > 0) {
     geometry_msgs::Vector3Stamped rpy_msg;
     rpy_msg.header = header;
-    rpy_msg.vector.x = r.euler.get_scaled(0);
-    rpy_msg.vector.y = r.euler.get_scaled(1);
-    rpy_msg.vector.z = r.euler.get_scaled(2);
+    rpy_msg.vector.x = r.euler.get_scaled(1);
+    rpy_msg.vector.y = r.euler.get_scaled(0);
+    rpy_msg.vector.z = -r.euler.get_scaled(2);
     rpy_pub.publish(rpy_msg);
   }
 
@@ -238,7 +238,7 @@ int main(int argc, char **argv) {
   serial::Serial ser;
   ser.setPort(port);
   ser.setBaudrate(baud);
-  serial::Timeout to = serial::Timeout::simpleTimeout(100);
+  serial::Timeout to = serial::Timeout(50, 50, 0, 50, 0);
   ser.setTimeout(to);
 
   ros::NodeHandle n;
