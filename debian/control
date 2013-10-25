@@ -1,0 +1,12 @@
+Source: ros-hydro-um6
+Section: misc
+Priority: extra
+Maintainer: Mike Purvis <mpurvis@clearpathrobotics.com>
+Build-Depends: debhelper (>= 7.0.50~), ros-hydro-catkin, ros-hydro-message-generation, ros-hydro-roscpp, ros-hydro-sensor-msgs, ros-hydro-serial
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-hydro-um6
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-hydro-message-runtime, ros-hydro-roscpp, ros-hydro-sensor-msgs, ros-hydro-serial
+Description: The um6 package provides a C++ implementation of the CH Robotics serial protocol, and a corresponding ROS node for publishing standard ROS orientation topics from a UM6.
