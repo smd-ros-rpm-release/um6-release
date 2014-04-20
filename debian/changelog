@@ -1,0 +1,28 @@
+ros-indigo-um6 (1.0.0-0saucy) saucy; urgency=high
+
+  * Add roslint.
+  * Use astyle to fix braces and spacing.
+  * #if guard for <endian.h> include on OS X.
+  * Contributors: Mike Purvis
+
+ -- Mike Purvis <mpurvis@clearpathrobotics.com>  Sun, 20 Apr 2014 04:00:00 -0000
+
+ros-indigo-um6 (0.0.2-0saucy) saucy; urgency=high
+
+  * Specify non-max inter-byte timeout to avoid 32-bit problems in serial.
+  * Switch to %zd for logging size_t values.
+  * Be more optimistic about finding packets back-to-back, rather than expecting inter-packet junk bytes.
+  * fix euler angle rpy so that it is published in ENU
+
+ -- Mike Purvis <mpurvis@clearpathrobotics.com>  Thu, 24 Oct 2013 04:00:00 -0000
+
+ros-indigo-um6 (0.0.1-0saucy) saucy; urgency=high
+
+  * Initial release of um6 driver. Mostly feature parity with Python driver.
+    - Switches the mag vector into ENU, unlike the python driver.
+    - Permits more of the configuration vectors to be set.
+    - Maintains reset service and option to issue resets on startup.
+
+ -- Mike Purvis <mpurvis@clearpathrobotics.com>  Fri, 30 Aug 2013 04:00:00 -0000
+
+
